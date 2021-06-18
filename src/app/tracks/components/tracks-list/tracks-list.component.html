@@ -1,0 +1,28 @@
+<div class="list row">
+  <div class="col-md-6">
+    <h4>Tracks List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let track of tracks; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTrack(track, i)"
+      >
+       <app-tracks-listitem [track]="track"></app-tracks-listitem>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentTrack">
+      <app-track-details
+        (refreshList)="refreshList()"
+        [track]="currentTrack"
+      ></app-track-details>
+    </div>
+
+    <div *ngIf="!currentTrack">
+      <br />
+      <p>Please click on a Track...</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "wavesurfer-collab": {
+      "hosting": {
+        "annacollab": [
+          "wavesurfer-collab"
+        ]
+      }
+    }
+  }
+}
